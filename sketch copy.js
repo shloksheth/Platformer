@@ -19,7 +19,7 @@ function preload() {
   boxImage = loadImage("boxRight.png");
   boxImage2 = loadImage("boxLeft.png")
   groundImage = loadImage("groundfloor.png");
-  bgImage = loadImage("background.png");
+  bgImage = loadImage("bg.jpg");
 
   //cloudImage = loadImage("cloud.png");
 
@@ -42,11 +42,11 @@ function setup() {
   box.addImage("box", boxImage);
   box.scale = 1.3;
 
-  /*bground = createSprite(780, 320, 900, 20);
+  bground = createSprite(780, 320, 900, 20);
   bground.addImage("bg", bgImage);
   bground.scale = 1.3;
   bground.depth = -11;
-  console.log(bground.depth);*/
+  console.log(bground.depth);
 
   invisibleGround = createSprite(200, 1083.5, 3000, 900);
   invisibleGround.visible = false;
@@ -62,19 +62,11 @@ function setup() {
 }
 
 function draw() {
-  background(bgImage);
+  background("white");
 
   if (gameState === PLAY) {
     score = score + Math.round(frameCount/120);
-    text("Score: " + score, 50, 75);
-
-
-// MAKE SURE TO MAKE BACKGROUND HIGHER IN MICROSOFT PAINT
-
-
-
-
-
+    text("Score: " + score, 300, 200);
 
     if (box.y < 596) {
       vy += g;
